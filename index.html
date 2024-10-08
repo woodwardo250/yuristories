@@ -4,15 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuri Stories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #e75480;
+            text-align: center;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .story-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .story-item {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .story-item a {
+            color: #e75480;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Yuri Stories</h1>
-    <p>Explore romantic and heartwarming tales below:</p>
-    <ul>
-        <li><a href="story1.html">The Blossoming Heart</a></li>
-        <li><a href="story2.html">Whispers in the Rain</a></li>
-        <li><a href="story3.html">Beyond the Horizon</a></li>
-        <!-- Add more stories here by creating additional links -->
+    <h1>Yuri Stories</h1>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search by title, author, date, or tag..." onkeyup="searchStories()">
+    </div>
+    
+    <!-- Story List -->
+    <ul class="story-list" id="story-list">
+        <li class="story-item" data-title="The Blossoming Heart" data-author="Author A" data-date="2023-01-15" data-tag="romance">
+            <a href="the-blossoming-heart-summary.html">The Blossoming Heart</a><br>
+            <small>Author: Author A | Published: 2023-01-15 | Tags: Romance</small>
+        </li>
+        <li class="story-item" data-title="Whispers in the Rain" data-author="Author B" data-date="2023-02-20" data-tag="friendship">
+            <a href="whispers-in-the-rain-summary.html">Whispers in the Rain</a><br>
+            <small>Author: Author B | Published: 2023-02-20 | Tags: Friendship, Romance</small>
+        </li>
+        <!-- Add more stories here -->
     </ul>
+
+    <script>
+        function searchStories() {
+            const input = document.getElementById('search-bar').value.toLowerCase();
+            const stories = document.getElementsByClassName('story-item');
+            
+            for (let story of stories) {
+                const title = story.getAttribute('data-title').toLowerCase();
+                const author = story.getAttribute('data-author').toLowerCase();
+                const date = story.getAttribute('data-date').toLowerCase();
+                const tag = story.getAttribute('data-tag').toLowerCase();
+                
+                if (title.includes(input) || author.includes(input) || date.includes(input) || tag.includes(input)) {
+                    story.style.display = '';
+                } else {
+                    story.style.display = 'none';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
