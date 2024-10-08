@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Blossoming Heart - Summary</title>
+    <title>Story 1 - Summary</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,12 +18,23 @@
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        a {
+        .chapter-list {
+            margin-top: 15px;
+        }
+        .chapter-list a {
             color: #e75480;
             text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
         }
-        a:hover {
+        .chapter-list a:hover {
             color: #ff7597;
+        }
+        a.back-link {
+            color: #e75480;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -34,8 +45,17 @@
         <p><strong>Published Date:</strong> October, 2024</p>
         <p><strong>Tags:</strong> Romance</p>
         <p><strong>Summary:</strong> A florist finds herself unexpectedly drawn to a mysterious woman who comes into her shop each Monday morning. Their brief exchanges gradually bloom into something more as they find comfort in each other’s presence.</p>
-        <p><a href="story1.html">Read Full Story</a></p>
-        <p><a href="index.html">Back to Home</a></p>
+
+        <!-- Chapter Links -->
+        <div class="chapter-list">
+            <h2>Chapters</h2>
+            <a href="chapter1.html">Chapter 1: First Encounter</a>
+            <a href="chapter2.html">Chapter 2: Rainy Days</a>
+            <a href="chapter3.html">Chapter 3: A New Beginning</a>
+            <!-- Add more chapters as needed -->
+        </div>
+
+        <a href="index.html" class="back-link">Back to Home</a>
     </div>
 </body>
 </html>
